@@ -1,6 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Simulate what the field looks like at the detection plane 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The code generates an input field |U> and computes the optical overlap
+% between it and the basis mode \Phi_n. 
 % Can be used for diagnostic purposes to check if the simulated intensity
 % matches what is observed with a camera.
 % Adjust the parameters below as required
