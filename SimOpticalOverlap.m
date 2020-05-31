@@ -72,9 +72,9 @@ text(H/40,H/15,'At detector \langle\Phi_n|U\rangle','FontSize',20);
 set(gca,'units','points','position',[2*Q 0 Q Q],'visible','off');
 
 % Phase plots as inserts
-axes('pos',[.2 .7 .1 .3])
+axes('pos',[.23 .7 .1 .3])
 imagesc(angle(Mode_in)); xticks([]); yticks([]);
-axes('pos',[.55 .7 .1 .3])
+axes('pos',[.56 .7 .1 .3])
 imagesc(angle(BasisEl)); xticks([]); yticks([]);
 axes('pos',[.9 .7 .1 .3])
 imagesc(angle(FT_field)); xticks([]); yticks([]);
