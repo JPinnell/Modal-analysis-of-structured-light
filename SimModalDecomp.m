@@ -28,12 +28,13 @@ PMax = 2; % maximum decomp for radial index
 LMax = 1; % maximum decomp for azimuthal index
 c_meas = zeros(PMax+1,2*LMax+1); % initialise
 w00 = w0; % beam size of basis modes
-for l = -LMax:LMax
-    for p = 0:PMax
+for p = 0:PMax
+    for l = -LMax:LMax
         BasisEl = LG(R,Phi,p,l,1,w00);
         overlap = fftshift(fft2(InputField.*conj(BasisEl))); % Fourier transform modulated field
-        c_meas(l+LMax+1,p+1) = overlap(H/2+1,H/2+1); % extract on-axis portion
-        ReconField = ReconField + c_meas(l+LMax+1,p+1).*BasisEl; % recondstructed field
+        c_meas(p+1,l+LMax+1) = overlap(H/2+1,H/2+1); % extract on-axis portion
+%         c_meas(p+1,l+LMax+1) = sum(sum( InputField.*conj(BasisEl) )); % alternatively, just approximate the integral
+        ReconField = ReconField + c_meas(p+1,l+LMax+1).*BasisEl; % recondstructed field
     end
 end
 c_meas = c_meas./norm(c_meas); % manually normalise measured expansion coefficients
